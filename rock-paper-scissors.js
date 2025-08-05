@@ -10,6 +10,23 @@ let score={
           losses:0,
           ties:0
         };
+      let isAutoPlaying=false;
+      let intervalId;
+      function autoplay(){
+        if(!isAutoPlaying){
+            intervalId=setInterval(function(){
+              const playerMove=playComputerMove();
+              playGame(playerMove);
+            },1500);
+            isAutoPlaying=true;
+            document.getElementById("stop-button").innerHTML='Stop Auto Play';
+        }else{
+          clearInterval(intervalId);
+          isAutoPlaing=false;
+        }
+        
+        
+      }
       function playGame(playerMove){
         let computerMove=playComputerMove();
         let result='';
