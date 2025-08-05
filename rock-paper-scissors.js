@@ -19,10 +19,11 @@ let score={
               playGame(playerMove);
             },1500);
             isAutoPlaying=true;
-            document.getElementById("stop-button").innerHTML='Stop Auto Play';
+            document.querySelector(".stop-button").innerHTML='Stop Auto Play';
         }else{
           clearInterval(intervalId);
-          isAutoPlaing=false;
+          document.querySelector(".stop-button").innerHTML='Auto Play';
+          isAutoPlaying=false;
         }
         
         
