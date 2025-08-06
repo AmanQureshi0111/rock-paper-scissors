@@ -19,6 +19,16 @@ let score={
   document.querySelector('.js-scissor-button').addEventListener('click',()=>{
     playGame('scissors');
   });
+
+  document.body.addEventListener('keydown',(event)=>{
+    if(event.key==='r'){
+      playGame('rock');
+    }else if(event.key==='s'){
+      playGame('scissors');
+    }else if(event.key==='p'){
+      playGame('paper');
+    }
+  });
   let isAutoPlaying=false;
   let intervalId;
   function autoplay(){
